@@ -12,7 +12,6 @@
                 <a href="{{route('carrinho.add', $produto->id)}}" class="card-link">Adicionar carrinho</a>
             </div>
         </div>
-
     @endforeach
 </div>
 @endsection
