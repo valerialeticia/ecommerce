@@ -19,12 +19,12 @@
                     <td>{{$item->name}}</td>
                     <td>{{Cart::session(auth()->id())->get($item->id)->getPriceSum()}}</td><!-- deixando o price dinamico-->
                     <td>
-                    <form action="">
+                    <form action="{{route('carrinho.update',$item->id)}}">
                         <input name="quantity" type="number" value="{{$item->quantity}}">
-                        <input type="submit" value="save">
+                        <input type="submit" value="salvar">
                     </form>
                     </td>
-                    <td><button type="button" class="btn btn-dark">Dark</button></td>
+                    <td><a type="button" class="btn btn-dark" href="{{route('carrinho.delete', $item->id)}}">Deletar</a></td>
                 </tr>
             @endforeach
            

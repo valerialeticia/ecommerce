@@ -25,4 +25,21 @@ class CarrinhoController extends Controller
         return view('carrinho.index', compact('itensCarrinho'));
     }
 
+    //update carrinho
+    public function atualizarProduto($itemId) {
+        \Cart::session(auth()->id())->update($itemId,[
+            'quantity' => array(
+                'relative' => false,
+                'value' => request('quantity')
+            )
+        ]);
+        return back();
+    }
+
+
+    //delete carrinho
+    public function deletarProduto($itemId) {
+        \Cart::session(auth()->id())->remove($itemId);
+        return back(); //retornar para a msm pagina
+    }
 }
