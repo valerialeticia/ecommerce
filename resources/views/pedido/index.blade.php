@@ -4,7 +4,7 @@
 <div class="container">
     <h3 class="text-primary text-center mb-5">Informações para finalização de compra</h3>
     
-    <form for="{{route('pedido.store')}}" method="post">
+    <form action="{{route('pedido.store')}}" method="post">
         @csrf
         <div class="form-row">
             <div class="form-group col-md-6">
