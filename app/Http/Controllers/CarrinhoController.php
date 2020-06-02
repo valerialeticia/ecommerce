@@ -42,4 +42,10 @@ class CarrinhoController extends Controller
         \Cart::session(auth()->id())->remove($itemId);
         return back(); //retornar para a msm pagina
     }
+
+    //redirecionamento para page de info para finalizar pedido
+    public function checkout()
+    {
+        return view('pedido.index');
+    }
 }
