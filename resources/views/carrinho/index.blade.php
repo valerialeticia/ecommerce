@@ -31,6 +31,11 @@
         </tbody>
     </table>
 
+    <h3>Preço Total:  R${{\Cart::session(auth()->id())->getTotal()}}</h3>
+
+
+   <a type="button" class="btn btn-dark" href="{{route('carrinho.checkout')}}">Finalizar pagamento</a>
+
 
 </div>
 @endsection
